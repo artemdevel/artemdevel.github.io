@@ -1,0 +1,26 @@
+# Setup
+title: DEV Notes
+url: https://artemdevel.github.io/
+baseurl: ""
+permalink: pretty
+
+# Optimize Jekyll
+exclude:
+  - .idea
+  - .git
+  - .gitignore
+  - .jekyll-cache
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE.md
+  - README.md
+  - Dockerfile
+
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# Navbar page list
+nav:
+  - title: About
+    url: /about
