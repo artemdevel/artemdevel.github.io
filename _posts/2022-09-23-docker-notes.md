@@ -8,29 +8,29 @@ Here are some notes and tips collected for `docker` during last years.
 It is better to check most recent docs on `docker` installation on the official site as they changed several times
 during the last years and now they are inclined to promote `Docker Desktop` for every platform.
 
-#### Ubuntu
+## Ubuntu
 
-###### Add current user to docker group (the group should be created during the install process)
+#### Add current user to docker group (the group should be created during the install process)
 ```shell
 sudo usermod -aG docker $USER
 ```
 
-###### Check user groups
+#### Check user groups
 ```shell
 groups $USER
 ```
 
-###### Restart Docker
+#### Restart Docker
 ```shell
 sudo service docker restart
 ```
 
-###### Login into Docker's group
+#### Login into Docker's group
 ```shell
 newgrp docker
 ```
 
-#### Mac OS
+## Mac OS
 The `--net=host` option doesn't work on MacOS
 
 There are special host names inside containers:
@@ -41,36 +41,36 @@ docker.for.mac.localhost
 This can be used, for example, to communicate between DB and backend containers as `localhost` isn't available
 on Mac OS inside containers. 
 
-#### Docker commands
+## Docker commands
 
-###### Test Docker
+#### Test Docker
 ```shell
 docker run --rm hello-world
 ```
 
-###### Start a service
+#### Start a service
 ```shell
 docker run --name SOME_NAME --env-file=ENV_FILE --net=host -dp 127.0.0.1:OUTER_PORT:INNER_PORT CONTEINER
 ```
 `--net=host` is required if one container should reach another via `localhost:port`.  
 If `-p` is used without a local address like `127.0.0.0` it will be bind to `0.0.0.0` which could be a security issue.  
 Any network service inside a docker container must be served on `0.0.0.0` to be available outside the container.  
-###### Example: start Swagger
+#### Example: start Swagger
 ```shell
 docker run --name swagger-editor -dp 0.0.0.0:8080:8080 swaggerapi/swagger-editor
 ```
 
-###### Print container names only
+#### Print container names only
 ```shell
 docker ps -a --format {% raw %}"{{.Names}}{% endraw %}"
 ```
 
-###### Print container IDs only
+#### Print container IDs only
 ```shell
 doocker ps -a -q
 ```
 
-###### Clean none containers
+#### Clean none containers
 ```shell
 docker rmi -f $(docker images -f "dangling=true" -q)
 ```
@@ -80,7 +80,7 @@ docker image prune --filter label=SOME_LABEL
 ```
 NOTE: Consider to use `docker build --rm` this should remove intermediate containers
 
-###### Copy files from/into a docker container
+#### Copy files from/into a docker container
 ```shell
 docker cp SOME_CONTEINER:/path/to/file LOCAL_FILE_NAME
 ```
@@ -88,7 +88,7 @@ docker cp SOME_CONTEINER:/path/to/file LOCAL_FILE_NAME
 docker cp LOCAL_FILE_NAME SOME_CONTEINER:/path/to/file
 ```
 
-###### List volumes and clean them
+#### List volumes and clean them
 ```shell
 docker volume ls
 ```
@@ -96,32 +96,32 @@ docker volume ls
 docker volume prune
 ```
 
-###### Clean Docker <none> images
+#### Clean Docker <none> images
 ```shell
 docker rmi $(docker images | grep \'^<none>\' | awk \'{print $3}\')
 ```
 
-###### Run something untrusted in Docker
+#### Run something untrusted in Docker
 ```shell
 docker run --rm -it -v $(PWD)/untrustedprogram:/untrustedprogram:ro ubuntu:latest
 ```
 
-###### Set Docker limits for build
+#### Set Docker limits for build
 ```shell
 docker build --cpu-period=100000 --cpu-quota=50000 --memory=1024m -t $PROJECT:$VERSION -f Dockerfile .
 ```
 
-###### Fix a terminal inside a container
+#### Fix a terminal inside a container
 Sometimes something could be mis-configured inside a container and things like `nano` can't work. 
 This should be executed inside the container.
 ```shell
 export TERM=xterm
 ```
 
-#### Databases oneliners
+## Databases oneliners
 NOTE: No volumes so they all are ephemeral
 
-###### PostgreSQL
+#### PostgreSQL
 ```shell
 docker run --name postgres -e POSTGRES_PASSWORD=password -dp 5432:5432 postgres:alpine
 ```
@@ -135,7 +135,7 @@ docker exec -it postgres psql -U postgres
 docker logs -f postgres
 ```
 
-###### MySQL\MariaDB
+#### MySQL\MariaDB
 ```shell
 docker run --name mariadb -e MYSQL_ROOT_PASSWORD=password -dp 127.0.0.1:3306:3306 mariadb
 ```
@@ -146,7 +146,7 @@ docker exec -it mariadb mysql -p
 docker logs -f mariadb
 ```
 
-###### Redis
+#### Redis
 ```shell
 docker run --name redis -dp 127.0.0.1:6379:6379 redis:alpine
 ```
@@ -157,7 +157,7 @@ docker exec -it redis redis-cli
 docker logs -f redis
 ```
 
-###### MongoDB
+#### MongoDB
 NOTE: Security isn't enabled by default
 ```shell
 docker run --name mongodb -dp 127.0.0.1:27017:27017 mongo
@@ -172,7 +172,7 @@ docker exec -it mongodb mongo admin
 docker logs -f mongodb
 ```
 
-#### Multi-Stage Build container example
+## Multi-Stage Build container example
 ```Dockerfile
 FROM golang as compiler 
 RUN CGO_ENABLED=0 go get -a -ldflags '-s' \ 
@@ -183,7 +183,7 @@ EXPOSE 8080
 CMD ["./helloworld"]
 ```
 
-#### Docker rootless and read-only container example
+## Docker rootless and read-only container example
 ```Dockerfile
 FROM alpine:3.15.0
 # docker build -t alpine .
