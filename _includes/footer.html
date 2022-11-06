@@ -1,0 +1,17 @@
+<footer class="site-footer h-card">
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        {% assign current_year = 'now' | date: "%Y" %}
+        {% if current_year == "2022" %}
+          {{ current_year }}
+        {% else %}
+          2022 - {{ current_year }}
+        {% endif %}
+      </div>
+    </div>
+
+  </div>
+
+</footer>
