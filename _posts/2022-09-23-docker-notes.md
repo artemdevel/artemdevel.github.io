@@ -98,7 +98,7 @@ docker volume prune
 
 #### Clean Docker <none> images
 ```shell
-docker rmi $(docker images | grep \'^<none>\' | awk \'{print $3}\')
+docker rmi $(docker images | grep '^<none>' | awk '{print $3}')
 ```
 
 #### Run something untrusted in Docker
