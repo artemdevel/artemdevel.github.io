@@ -104,7 +104,7 @@ Show the disk space used by containers
 ```shell
 docker ps --size
 ```
-The output is a bit cryptic regarding to the size. It shows two values - the `size` and the `virtual size`, according the
+The output is a bit cryptic regarding the size. It shows two values - the `size` and the `virtual size`, according the
 docs the `size` is the size of a writable layer of each container and the `virtual size` is the total size of a read-only
 layers plus the writable layer.
 
@@ -112,4 +112,4 @@ Show disk space used by docker daemon (includes images, containers, etc)
 ```shell
 docker system df
 ```
-NOTE: the default output is pretty generic but `-v` (verbose) options give lot more interesting details.
+NOTE: the default output is pretty generic but `-v` (verbose) options give a lot more interesting details.
