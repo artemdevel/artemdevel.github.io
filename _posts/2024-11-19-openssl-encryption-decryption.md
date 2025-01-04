@@ -66,3 +66,15 @@ openssl pkeyutl -encrypt -inkey bob_public.pem -pubin -in secret_file.txt -out s
 openssl pkeyutl -decrypt -inkey bob_private.pem -in secret_file.enc > secret_file.txt
 ```
 Note that in commands above `pkeyutl` is used. In older `OpenSLL` versions `rsautl` must be used (and it is deprecated now).
+
+#### Misc tips
+Generate a random key
+```shell
+openssl rand -base64 256 > secret.key
+```
+
+Encrypt and decrypt data using the key file as a parameter
+```shell
+openssl enc -aes-256-cbc -a -salt -in secret_file.txt -out secret_file.enc -pass file:$HOME/path/to/secret.key
+openssl enc -d -aes-256-cbc -a -salt -in secret_file.enc -out secret_file.txt -pass file:$HOME/path/to/secret.key
+```
