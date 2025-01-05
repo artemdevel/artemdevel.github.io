@@ -54,7 +54,7 @@ Always run your docker images with `--security-opt=no-new-privileges` in order t
 `setuid` or `setgid` binaries.
 
 ## Disable inter-container communication
-By default inter-container communication (ICC) is enabled - it means that all containers can talk with each other
+By default, inter-container communication (ICC) is enabled - it means that all containers can talk with each other
 (using docker0 bridged network). This can be disabled by running docker daemon with `--icc=false` flag.
 If `ICC` is disabled it is required to tell which containers can communicate using `--link=CONTAINER_NAME_or_ID:ALIAS` option.
 

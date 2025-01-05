@@ -10,7 +10,7 @@ any information here on how to install it. It changes and improves from time to 
 from the official sources.
 
 Most problems I had were related to Windows and USB drivers. On Ubuntu/Linux it was fairly
-easy to get everything working and I've never tried to develop for Android under MacOS. Also more options available for
+easy to get everything working and I've never tried to develop for Android under macOS. Also more options available for
 Android at the moment like remote debugging using Wi-Fi but I've never tried this as well. 
 
 ## Commands
@@ -23,7 +23,7 @@ adb devices
 List of devices attached
 333AY0JFQD  device
 ```
-By default you are not the `root` and this limits your possibilities. It is possible to get the `root` access but I also
+By default, you are not the `root` and this limits your possibilities. It is possible to get the `root` access but I also
 will not cover it in detail because this procedure is different from vendor to vendor and from device to device so it is
 better to find the most recent information available.
 
@@ -63,7 +63,7 @@ It is possible to install an APK file as well:
 ```shell
 adb install -r someApplication.apk
 ```
-It is possible to make a screen shot and pull it from the device:
+It is possible to make a screenshot and pull it from the device:
 ```shell
 adb shell screencap -p /sdcard/screen.png
 adb pull /sdcard/screen.png

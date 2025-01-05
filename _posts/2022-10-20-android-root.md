@@ -11,7 +11,7 @@ check XDA Forums or projects like TWRP.
 
 With the rooted device many various possibilities are available such as clean up the device from various default bloatware
 or anything unwanted, install any compatible custom ROMs, perform advanced device backups etc. Back in the days of Android 2.3
-when I rooted my HTC tablet and cleaned everything I didn't need it battery life improved so greatly that I couldn't believe it.
+when I rooted my HTC tablet and cleaned everything I didn't need it battery life improved so greatly that I could not believe it.
 It is also possible to compile native binaries and install them into the system by just copying them into `/system/bin`.
 
 The major drawback of rooting a device is that OTA won't be possible anymore. If you unlock the bootloader and modify anything,
@@ -86,7 +86,7 @@ adb push su /system/xbin/su
 adb shell chmod 04755 /system/xbin/su
 ```
 NOTE: unfortunately this doesn't work because `adb remount` requires `adb root` and `adb root` fails for `production builds`
-Possible workaround is modify and recompile adb.
+Possible workaround is to modify and recompile adb.
 
 #### Modify system image and flash it
 This looks relatively simple but it requires careful image modification and own `su` implementation. As the AOSP has its own
@@ -149,7 +149,7 @@ So it can be deleted for good or it can be installed back if the app is required
 pm install -r --user 0 /system/app/SomeApp/SomeApp.apk
 ```
 
-List of users also can be get by `pm` command
+List of users also can be obtained by `pm` command
 ```shell
 pm list users
 ```
@@ -186,7 +186,7 @@ lrwxrwxrwx 1 root root   21 1973-07-13 20:31 system_a -> /dev/block/mmcblk0p68
 lrwxrwxrwx 1 root root   21 1973-07-13 20:31 system_b -> /dev/block/mmcblk0p69
 ...
 ```
-NOTE: Such weird dates for the device made in the 21th century.
+NOTE: Such weird dates for the device made in the 21st century.
 
 Copy partition using `dd`
 ```shell
@@ -212,7 +212,7 @@ The booting partitions could be trickier because `cpio` format is used for them 
 There were tools like `mkbootimg`, `mkbootfs` etc and the `cpio` util itself. Anyway it is better to check the most
 recent information from vendors about what is going on there now.
 
-#### Get list of all saved wifi networks with passwords
+#### Get list of all saved Wi-Fi networks with passwords
 ```shell
 cat /data/misc/wifi/wpa_supplicant.conf
 ```

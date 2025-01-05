@@ -71,67 +71,67 @@ NOTE: `TYPE65` is something not yet completely standardised for the high-speed I
 
 ## Most commonly used DNS records
 
-| DNS record | Description |
-|---|---|
-| `A` | IPv4 address |
-| `AAAA` | IPv6 address |
-| `CNAME` | Canonical name |
-| `MX` | Mail exchange |
-| `NS` | Name server |
-| `TXT` | Human-readable text |
+| DNS record | Description         |
+|------------|---------------------|
+| `A`        | IPv4 address        |
+| `AAAA`     | IPv6 address        |
+| `CNAME`    | Canonical name      |
+| `MX`       | Mail exchange       |
+| `NS`       | Name server         |
+| `TXT`      | Human-readable text |
     
 ## All DNS records currently in use
 
-| DNS record | Description |
-|---|---|
-`A` | `IPv4` address
-`AAAA` | `IPv6` address
-`AFSDB` | `AFS` database location
-`APL` | Address prefix list
-`AXFR` | Authoritative zone transfer
-`CAA` | Certification authority authorization
-`CDNSKEY` | Child copy of a `DNSKEY`
-`CDS` | Child copy of DS
-`CERT` | Cryptographic certificate
-`CNAME` | Canonical name
-`CSYNC` | Child-to-parent synchronization
-`DHCID` | `DHCP` identifier
-`DLV` | `DNSSEC` look aside validation
-`DNAME` | Delegation name
-`DNSKEY` | Cryptographic key for `DNSSEC`
-`DS` | Delegation signer
-`EUI48` | `MAC` address (`EUI-48`)
-`EUI64` | `MAC` address (`EUI-64`)
-`HINFO` | Host information
-`HIP` | Host identification protocol
-`HTTPS` | `HTTPS` binding
-`IPSECKEY` | Cryptographic key for `IPsec`
-`IXFR` | Incremental zone transfer
-`KEY` | Cryptographic key for `DNSSEC` (obsoleted by `DNSKEY`)
-`KX` | Key exchange
-`LOC` | Geographical location
-`MX` | Mail exchange
-`NAPTR` | naming authority pointer
-`NS` | Name server
-`NSEC3` | Next secure (version 3)
-`NSEC3PARAM` | Parameter for `NSEC3`
-`NSEC` | Next secure (obsoleted by `NSEC3`)
-`NXT` | `DNSSEC` key (obsoleted by `NSEC`)
-`OPENPGPKEY` | Public key for `OpenPGP`
-`OPT` | `EDNS` option
-`PTR` | Canonical name pointer
-`RP` | Responsible person
-`RRSIG` | Resource record signature for `DNSSEC`
-`SIG` | Resource record signature for `DNSSEC` (obsoleted by `RRSIG`)
-`SMIMEA` | `S/MIME` association
-`SOA` | Start of authority
-`SSHFP` | Public key fingerprint for `SSH`
-`SVCB` | Service binding
-`SRV` | Service locator
-`TA` | Trust authorities for `DNSSEC`
-`TKEY` | Transaction key
-`TLSA` | Certificate association for `TLS`
-`TSIG` | Transaction signature
-`TXT` | Human-readable text
-`URI` | Uniform resource identifier
-`ZONEMD` | Message digest for DNS zones
+| DNS record   | Description                                                   |
+|--------------|---------------------------------------------------------------|
+| `A`          | `IPv4` address                                                |
+| `AAAA`       | `IPv6` address                                                |
+| `AFSDB`      | `AFS` database location                                       |
+| `APL`        | Address prefix list                                           |
+| `AXFR`       | Authoritative zone transfer                                   |
+| `CAA`        | Certification authority authorization                         |
+| `CDNSKEY`    | Child copy of a `DNSKEY`                                      |
+| `CDS`        | Child copy of DS                                              |
+| `CERT`       | Cryptographic certificate                                     |
+| `CNAME`      | Canonical name                                                |
+| `CSYNC`      | Child-to-parent synchronization                               |
+| `DHCID`      | `DHCP` identifier                                             |
+| `DLV`        | `DNSSEC` look aside validation                                |
+| `DNAME`      | Delegation name                                               |
+| `DNSKEY`     | Cryptographic key for `DNSSEC`                                |
+| `DS`         | Delegation signer                                             |
+| `EUI48`      | `MAC` address (`EUI-48`)                                      |
+| `EUI64`      | `MAC` address (`EUI-64`)                                      |
+| `HINFO`      | Host information                                              |
+| `HIP`        | Host identification protocol                                  |
+| `HTTPS`      | `HTTPS` binding                                               |
+| `IPSECKEY`   | Cryptographic key for `IPsec`                                 |
+| `IXFR`       | Incremental zone transfer                                     |
+| `KEY`        | Cryptographic key for `DNSSEC` (obsoleted by `DNSKEY`)        |
+| `KX`         | Key exchange                                                  |
+| `LOC`        | Geographical location                                         |
+| `MX`         | Mail exchange                                                 |
+| `NAPTR`      | naming authority pointer                                      |
+| `NS`         | Name server                                                   |
+| `NSEC3`      | Next secure (version 3)                                       |
+| `NSEC3PARAM` | Parameter for `NSEC3`                                         |
+| `NSEC`       | Next secure (obsoleted by `NSEC3`)                            |
+| `NXT`        | `DNSSEC` key (obsoleted by `NSEC`)                            |
+| `OPENPGPKEY` | Public key for `OpenPGP`                                      |
+| `OPT`        | `EDNS` option                                                 |
+| `PTR`        | Canonical name pointer                                        |
+| `RP`         | Responsible person                                            |
+| `RRSIG`      | Resource record signature for `DNSSEC`                        |
+| `SIG`        | Resource record signature for `DNSSEC` (obsoleted by `RRSIG`) |
+| `SMIMEA`     | `S/MIME` association                                          |
+| `SOA`        | Start of authority                                            |
+| `SSHFP`      | Public key fingerprint for `SSH`                              |
+| `SVCB`       | Service binding                                               |
+| `SRV`        | Service locator                                               |
+| `TA`         | Trust authorities for `DNSSEC`                                |
+| `TKEY`       | Transaction key                                               |
+| `TLSA`       | Certificate association for `TLS`                             |
+| `TSIG`       | Transaction signature                                         |
+| `TXT`        | Human-readable text                                           |
+| `URI`        | Uniform resource identifier                                   |
+| `ZONEMD`     | Message digest for DNS zones                                  |

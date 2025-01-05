@@ -5,7 +5,7 @@ title: Bash notes
 
 Bash is an extremely wide topic. Here I just have some notes on bash which I personally find useful and which I want
 here instead of searching the Internet. In most cases though it is better to search the Internet, read the manuals,
-read Wikis like ArchWiki, check the code of other folks on Github and so on. Bash is the bottomless rabbit hole.
+read Wikis like ArchWiki, check the code of other folks on GitHub and so on. Bash is the bottomless rabbit hole.
 
 Bash itself is a standardized thing surprisingly. 
 The full standard name is `IEEE POSIX P1003.2/ISO 9945.2 Shell and Tools standard`.

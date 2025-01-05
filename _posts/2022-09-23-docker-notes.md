@@ -10,7 +10,7 @@ during the last years and now they are inclined to promote `Docker Desktop` for 
 
 ## Ubuntu
 
-#### Add current user to docker group (the group should be created during the install process)
+#### Add current user to docker group (the group should be created during the installation process)
 ```shell
 sudo usermod -aG docker $USER
 ```
@@ -31,7 +31,7 @@ newgrp docker
 ```
 
 ## Mac OS
-The `--net=host` option doesn't work on MacOS
+The `--net=host` option doesn't work on macOS
 
 There are special host names inside containers:
 ```
@@ -39,7 +39,7 @@ docker.for.mac.host.internal
 docker.for.mac.localhost
 ```
 This can be used, for example, to communicate between DB and backend containers as `localhost` isn't available
-on Mac OS inside containers. 
+on macOS inside containers. 
 
 ## Docker commands
 
@@ -53,7 +53,7 @@ docker run --rm hello-world
 docker run --name SOME_NAME --env-file=ENV_FILE --net=host -dp 127.0.0.1:OUTER_PORT:INNER_PORT CONTEINER
 ```
 `--net=host` is required if one container should reach another via `localhost:port`.  
-If `-p` is used without a local address like `127.0.0.0` it will be bind to `0.0.0.0` which could be a security issue.  
+If `-p` is used without a local address like `127.0.0.0` it will be bound to `0.0.0.0` which could be a security issue.  
 Any network service inside a docker container must be served on `0.0.0.0` to be available outside the container.  
 #### Example: start Swagger
 ```shell
@@ -121,7 +121,7 @@ export TERM=xterm
 ## Databases oneliners
 NOTE: No volumes so they all are ephemeral
 
-#### PostgreSQL
+#### PostgresSQL
 ```shell
 docker run --name postgres -e POSTGRES_PASSWORD=password -dp 5432:5432 postgres:alpine
 ```
@@ -175,8 +175,8 @@ docker logs -f mongodb
 ## Multi-Stage Build container example
 ```Dockerfile
 FROM golang as compiler 
-RUN CGO_ENABLED=0 go get -a -ldflags '-s' \ 
-github.com/adriaandejonge/helloworld FROM scratch
+RUN CGO_ENABLED=0 go get -a -ldflags '-s' \
+    github.com/adriaandejonge/helloworld FROM scratch
  
 COPY --from=compiler /go/bin/helloworld . 
 EXPOSE 8080

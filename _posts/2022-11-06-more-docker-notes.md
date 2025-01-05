@@ -36,7 +36,7 @@ docker build --build-arg GIT_COMMIT="$(git log --pretty="%h" -1)" -t my_python .
 ```
 
 #### Inspect the label
-The label is the part of the image so it can be inspect or used for various filters etc.
+The label is the part of the image so it can be inspected or used for various filters etc.
 ```shell
 docker inspect my_python:latest
 ```
