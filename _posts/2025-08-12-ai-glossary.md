@@ -45,3 +45,4 @@ A collection of various AI-related terms and notions. Obtained from many differe
 * `llama.cpp` - is an open-source C/C++ project designed to enable the efficient inference of large language models (LLMs) on consumer hardware, particularly focusing on CPU-based execution.
 * `Embeddings` - are numerical representations of data that allow machine learning models to understand relationships between different objects, like words, images, or even user interactions. (somewhat related to `Embedding` above I suppose)
 * `RAG` - "Retrieval-Augmented Generation" is a technique that combines the strengths of information retrieval systems with large language models (LLMs).
+* `MCP` - "Model Context Protocol" is an open standard and open-source framework which standardizes the way artificial intelligence (AI) systems like large language models (LLMs) integrate and share data with external tools, systems, and data sources.
