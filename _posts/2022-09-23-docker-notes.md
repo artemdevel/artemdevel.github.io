@@ -198,3 +198,13 @@ USER alpine
 
 CMD sleep infinity
 ```
+
+## Docker `.gitignore`
+
+When utilizing a custom `Dockerfile name`, the associated `.dockerignore` file should be named to match the custom `Dockerfile` name, followed by `.dockerignore`.
+For example, if the custom `Dockerfile` is named `Dockerfile.dev`, the corresponding ignore file should be named `Dockerfile.dev.dockerignore`.
+
+When initiating a `Docker` build with a custom `Dockerfile` using the `-f` flag (like, docker build `-f Dockerfile.dev .`), `Docker` will first search for an ignore 
+file with the specific naming convention `Dockerfile.dev.dockerignore`. If this specific file is not found, `Docker` will then fall back to using a standard 
+`.dockerignore` file if one exists in the build context. This allows for tailored exclusion rules for different build environments or purposes while maintaining 
+a clear association between the `Dockerfile` and its ignore rules.
