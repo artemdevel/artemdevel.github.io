@@ -47,6 +47,7 @@ browser.ml.chat.hideLabsShortcuts
 The parameter must be set `true`. The parameter type is `boolean`.
 ```
 browser.ml.chat.page
+browser.ml.chat.sidebar
 browser.ml.chat.page.footerBadge
 browser.ml.chat.page.menuBadge
 browser.ml.chat.menu
@@ -55,6 +56,8 @@ browser.ml.pageAssist.enabled
 browser.tabs.groups.smart.enabled
 browser.tabs.groups.smart.userEnabled
 extensions.ml.enabled
+pdfjs.enableAltTextModelDownload
+pdfjs.enableGuessAltText
 ```
 All the parameters above must be set `false`. The parameters type is `boolean`.
 
