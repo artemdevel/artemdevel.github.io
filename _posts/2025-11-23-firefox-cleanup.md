@@ -91,3 +91,15 @@ ui.prefersReducedMotion
 The parameter must be set `1`. The parameter type is `number`.  
 NOTE: I used this because Firefox introduced context menus (right-click menus) which are sort of resized while activated
 and for some reason this annoyed me. Previously the context menu "just appeared" without any effects.
+
+## Bring back the full URL in address bar
+```
+browser.urlbar.trimURLs
+```
+The parameter must be set `false`. The parameter type is `boolean`.  
+
+```
+browser.urlbar.trimHttps
+```
+The parameter must be set `false`. The parameter type is `boolean`.  
+NOTE: There is also a setting for Firefox Search named `Show search terms in the address bar on results pages` (`browser.urlbar.showSearchTerms.enabled` in `about:config`).  
