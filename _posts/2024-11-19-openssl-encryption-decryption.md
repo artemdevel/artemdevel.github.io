@@ -78,3 +78,10 @@ Encrypt and decrypt data using the key file as a parameter
 openssl enc -aes-256-cbc -a -salt -in secret_file.txt -out secret_file.enc -pass file:$HOME/path/to/secret.key
 openssl enc -d -aes-256-cbc -a -salt -in secret_file.enc -out secret_file.txt -pass file:$HOME/path/to/secret.key
 ```
+
+Encrypt and decrypt a file use an environment variable with the key
+```shell
+export KEY="$(openssl rand -base64 256)"
+cat file | openssl enc -aes-256-cbc -salt -pbkdf2 -iter 100000 -pass env:KEY > file.enc
+cat file.enc | openssl enc -d -aes-256-cbc -pbkdf2 -iter 100000 -pass env:KEY > file
+```
