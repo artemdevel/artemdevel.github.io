@@ -208,3 +208,31 @@ When initiating a `Docker` build with a custom `Dockerfile` using the `-f` flag 
 file with the specific naming convention `Dockerfile.dev.dockerignore`. If this specific file is not found, `Docker` will then fall back to using a standard 
 `.dockerignore` file if one exists in the build context. This allows for tailored exclusion rules for different build environments or purposes while maintaining 
 a clear association between the `Dockerfile` and its ignore rules.
+
+## Multistage Dockerfile
+```Dockerfile
+FROM python:3.12 AS builder
+RUN pip install -r requirements.txt
+COPY . /app
+
+FROM python:3.12 AS tests
+COPY --from=builder /app /app
+CMD ["pytest", "-vv"]
+
+FROM python:3.12 AS service
+COPY --from=builder /app /app
+CMD ["python", "app.py"]
+```
+
+This way it is possible to build separate images from different stages by using the `--target` flag:
+```bash
+# Build only the 'service' stage (default, also `--target service` can be used)
+docker build -t my-service .
+
+# Build only the 'tests' stage as a separate image
+docker build -t my-tests --target tests .
+
+# Build only the 'builder' stage as a separate image
+docker build -t my-builder --target builder .
+```
+NOTE: `docker-compose` also supports this by using `target:` attribute.
