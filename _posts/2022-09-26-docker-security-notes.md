@@ -76,3 +76,32 @@ In addition volumes also can be mounted as read-only
 ```shell
 docker run -v volume-name:/path/in/container:ro alpine
 ```
+
+## Mount secrets
+`--mount=type=secret` is a Docker build feature that allows you to securely pass sensitive data (like API keys, credentials 
+or private tokens) into `Dockerfile` without embedding them in the image layers or build history.
+
+- **Temporary access only** - The secret is available only during the specific build step where it's mounted, then discarded.
+- **Not stored in the image** - The secret never gets baked into the Docker image, so it won't be exposed if someone inspects the image.
+- **BuildKit required** - This feature requires Docker BuildKit to be enabled (`DOCKER_BUILDKIT=1`).
+
+```Dockerfile
+RUN --mount=type=secret,id=my_secret cat /run/secrets/my_secret
+```
+
+#### Pass the secret to `docker build`
+```bash
+DOCKER_BUILDKIT=1 docker build --secret id=my_secret,src=/path/to/secret/file .
+```
+Or inline
+```bash
+DOCKER_BUILDKIT=1 docker build --secret id=my_secret,src=/dev/stdin . <<< "my-secret-value"
+```
+
+#### Access it in the Dockerfile
+```Dockerfile
+FROM python:3.12
+RUN --mount=type=secret,id=my_api_key \
+    API_KEY=$(cat /run/secrets/my_api_key) && \
+    pip install some-package --with-api-key=$API_KEY
+```
