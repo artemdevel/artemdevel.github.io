@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Work with ADB
+tags: [android]
 ---
 
 ## Intro

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Docker security notes
+tags: [docker, security]
 ---
 
 I had a small collection of links related to Docker security best practices and other security tips but unfortunately

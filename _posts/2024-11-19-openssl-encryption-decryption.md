@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Use OpenSSL to encrypt and decrypt files
+tags: [openssl, security]
 ---
 
 #### OpenSSL

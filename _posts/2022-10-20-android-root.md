@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Android root
+tags: [android]
 ---
 
 ## Intro

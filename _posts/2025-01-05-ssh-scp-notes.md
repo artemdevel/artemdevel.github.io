@@ -1,6 +1,7 @@
 ---
 layout: post
 title: SSH and SCP notes
+tags: [ssh, security]
 ---
 
 `SSH` and `SCP` have near infinite amount of tips and tricks. This page contains only some typical usage of them.

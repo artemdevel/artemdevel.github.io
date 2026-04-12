@@ -1,6 +1,7 @@
 ---
 layout: post
 title: More Docker notes
+tags: [docker]
 ---
 
 Here are some more Docker notes.

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Docker notes
+tags: [docker]
 ---
 
 Here are some notes and tips collected for `docker` during last years.
