@@ -26,6 +26,3 @@ nav:
     url: /tags
   - title: About
     url: /about
-
-# Support GitHub flavored markdown
-markdown: GFM
