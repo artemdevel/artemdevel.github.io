@@ -3,7 +3,6 @@ title: DEV Notes
 url: https://artemdevel.github.io/
 baseurl: ""
 permalink: pretty
-markdown: GFM
 
 # Optimize Jekyll
 exclude:

@@ -10,7 +10,6 @@ bound on the growth rate of an algorithm's runtime or memory usage.
 
 #### `O(1)` – Constant Time
 The algorithm runs in the same amount of time regardless of input size.
-> [!NOTE]
 > Example: Accessing an element in an array by index.
 
 ```python
