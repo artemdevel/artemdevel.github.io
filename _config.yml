@@ -28,6 +28,4 @@ nav:
     url: /about
 
 # Support GitHub flavored markdown
-markdown: kramdown
-kramdown:
-  input: GFM
+markdown: GFM
