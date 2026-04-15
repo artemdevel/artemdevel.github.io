@@ -7,7 +7,7 @@ Bash is an extremely wide topic. Here I just have some notes on bash which I per
 here instead of searching the Internet. In most cases though it is better to search the Internet, read the manuals,
 read Wikis like ArchWiki, check the code of other folks on GitHub and so on. Bash is the bottomless rabbit hole.
 
-Bash itself is a standardized thing surprisingly. 
+Bash itself is a standardized thing, surprisingly. 
 The full standard name is `IEEE POSIX P1003.2/ISO 9945.2 Shell and Tools standard`.
 
 ## My bash script template
@@ -26,7 +26,7 @@ exit codes if such commands fail and this prevents pipelined commands failures m
 There are less frequent options I use like `-x` which tells bash to prints all commands it is about to execute which is
 convenient for debugging.
 
-In the case of bash always use linting tools. `ShellCheck` does the real great job and it is also integrated into 
+In the case of `bash` always use linting tools. `ShellCheck` does the real great job and it is also integrated into 
 `PyCharm` and in other IDEs from `JetBrains`. 
 
 Sometimes it could be useful to set the `IFS` (Internal Field Separator) variable explicitly

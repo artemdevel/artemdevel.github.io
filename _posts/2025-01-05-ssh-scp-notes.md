@@ -47,7 +47,8 @@ ssh -o IdentitiesOnly=yes -p 3333 user@example.com
 NOTE: SSH auth can fail in case of many keys. So the exact key should be enforced explicitly
 
 ###### Remove key record from the `known_hosts` file
-At some point the key reference will be added to the `known_hosts` files. If something is changed for the host it will be required to remove such record so a key will be re-added.
+At some point the key reference will be added to the `known_hosts` files. 
+If something is changed for the host it will be required to remove such a record so a key will be re-added.
 ```shell
 ssh-keygen -f "/home/ubuntu/.ssh/known_hosts" -R example.com
 ```
@@ -109,7 +110,7 @@ ENDSSH
 ###### SSH Escape Sequences
 Press `~` then `?` to see help.    
 `~.` - terminate connection. Useful for broken sessions.  
-Sometime `Ctrl+D` could be handy to terminate a session.
+Sometimes `Ctrl+D` could be handy to terminate a session.
 
 ###### Check SSH with other tools
 ```shell
@@ -143,7 +144,7 @@ Host example
 
 ###### Copy files and folders with `scp`
 For folders use `-r` and for the src folder don't use the trailing slash.  
-Use `-v` for the progress (though it show SSH connection messages as well).
+Use `-v` for the progress (though it shows SSH connection messages as well).
 Use `-i` for SSH keys. Use `-P` for a custom port. The `~` can be used in remote paths.
 ```shell
 scp -r -i /path/to/ssh/key user@host:/some/remote/path /some/local/path

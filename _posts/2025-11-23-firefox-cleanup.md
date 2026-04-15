@@ -7,7 +7,7 @@ Despite the fact the Firefox is more privacy-friendly the company often makes un
 annoying for Firefox's users. So here is my short collection of things to disable in Firefox.
 
 All settings below can be accessed using `about:config` or they can be put into a file named `prefs.js` (or `user.js`)
-which located in a Firefox profile folder.
+which is located in a Firefox profile folder.
 ```js
 user_pref("some.setting.name", false); // "some.setting.name" is the same name as for about:config
 ```
@@ -78,7 +78,7 @@ The parameter type is `string`. At the moment it is empty for me maybe because I
 The `network.trr.mode` must be set to `3` to use it.
 
 ## Disable IPv6
-Not a proved issue but there are some claims that disabling `IPv6` could improve long TLS handshakes in some cases.
+Not a proven issue but there are some claims that disabling `IPv6` could improve long TLS handshakes in some cases.
 ```
 network.dns.disableIPv6
 ```
