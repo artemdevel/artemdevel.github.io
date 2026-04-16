@@ -91,11 +91,11 @@ RUN --mount=type=secret,id=my_secret cat /run/secrets/my_secret
 ```
 
 #### Pass the secret to `docker build`
-```bash
+```shell
 DOCKER_BUILDKIT=1 docker build --secret id=my_secret,src=/path/to/secret/file .
 ```
 Or inline
-```bash
+```shell
 DOCKER_BUILDKIT=1 docker build --secret id=my_secret,src=/dev/stdin . <<< "my-secret-value"
 ```
 
@@ -105,4 +105,39 @@ FROM python:3.12
 RUN --mount=type=secret,id=my_api_key \
     API_KEY=$(cat /run/secrets/my_api_key) && \
     pip install some-package --with-api-key=$API_KEY
+```
+
+## Mount SSH
+`--mount=type=ssh` is a Docker build feature that allows you to securely use SSH keys during the build process without 
+embedding them in the image.
+
+- **SSH agent forwarding** - It mounts your SSH key(s) from the host into the container during the build, making them available to SSH commands.
+- **Temporary access** - The SSH key is only available during that specific RUN step, then removed.
+- **Not stored in the image** - Your SSH keys are never baked into the Docker image layers.
+- **BuildKit required** - Requires Docker BuildKit (`DOCKER_BUILDKIT=1`).
+
+```Dockerfile
+RUN --mount=type=ssh <command that uses SSH>
+```
+
+#### SSH forwarding
+```shell
+DOCKER_BUILDKIT=1 docker build --ssh default=$SSH_AUTH_SOCK .
+```
+Or explicitly specify the key
+```shell
+DOCKER_BUILDKIT=1 docker build --ssh default=~/.ssh/id_rsa .
+```
+
+#### Use in `Dockerfile`
+```Dockerfile
+FROM ubuntu:22.04
+
+RUN apt-get update && apt-get install -y git openssh-client
+
+RUN --mount=type=ssh \
+    git clone git@github.com:user/private-repo.git /app 
+
+RUN --mount=type=ssh \
+    pip install git+ssh://git@github.com/user/private-repo.git
 ```
