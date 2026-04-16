@@ -22,6 +22,8 @@ sass:
 
 # Navbar page list
 nav:
+  - title: Search
+    url: /search
   - title: Tags
     url: /tags
   - title: About
