@@ -103,3 +103,9 @@ browser.urlbar.trimHttps
 ```
 The parameter must be set `false`. The parameter type is `boolean`.  
 NOTE: There is also a setting for Firefox Search named `Show search terms in the address bar on results pages` (`browser.urlbar.showSearchTerms.enabled` in `about:config`).  
+
+## Disable Nova (gradient) theme
+```
+browser.nova.enabled
+```
+The parameter must be set `false`. The parameter type is `boolean`.  
